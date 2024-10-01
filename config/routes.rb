@@ -11,5 +11,6 @@ Rails.application.routes.draw do
 
   get 'about', to: 'pages#about'
 
-  resources :articles, only: [:show, :index, :create, :new, :edit, :update]
+  # exposes :show, :index, :new, :create, :edit, :update, :destroy
+  resources :articles
 end
