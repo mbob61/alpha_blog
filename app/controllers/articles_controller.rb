@@ -18,6 +18,7 @@ class ArticlesController < ApplicationController
   def create
     #Rails is smart enough to map the returned data from the params into those of the object we're creating
     @article = Article.new(article_params)
+    @article.user = User.first
     if @article.save
       flash[:notice] = "Article was created successfully"
       # extract the id of the article object, then redirect to `/article/id`
